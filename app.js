@@ -8,22 +8,10 @@
 // 6. crypto - for generating cryptographic hashes
 // 7. readline - for reading input from a terminal
 
-// importing a built in module OS
+// importing built in path module
+const path = require("path");
+// seprator property
+console.log(path.sep);
 
-const os = require("os");
-
-// info about current user
-
-const user = os.userInfo();
-
-// method returns the system uptime in seconds
-
-console.log(`the system uptime is ${os.uptime()}`);
-
-const currentOs = {
-  name: os.type(),
-  release: os.release(),
-  totalMem: os.totalmem(),
-  freeMem: os.freemem(),
-};
-console.log(currentOs);
+const absolute = path.resolve(__dirname, "about.js");
+console.log(absolute);
