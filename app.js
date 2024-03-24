@@ -1,14 +1,29 @@
-// implimentation of node modules
-// import names.js for name generation
-const names = require("./names");
-// import utills.js so that we can use sayHi func
-const sayHi = require("./utils");
-sayHi("rekha");
-sayHi(names.john);
-sayHi(names.peter);
+// Built in modules in node
 
-// implementation complited
+// 1. fs - file system module
+// 2. path - to work with files and directories paths
+// 3. http - for making requests to the web
+// 4. url - to parse URLs
+// 5. OS  - operating system specific functionality
+// 6. crypto - for generating cryptographic hashes
+// 7. readline - for reading input from a terminal
 
-/* this file is executing without export */
-/* when we import any module it actully invoked */
-require("./about");
+// importing a built in module OS
+
+const os = require("os");
+
+// info about current user
+
+const user = os.userInfo();
+
+// method returns the system uptime in seconds
+
+console.log(`the system uptime is ${os.uptime()}`);
+
+const currentOs = {
+  name: os.type(),
+  release: os.release(),
+  totalMem: os.totalmem(),
+  freeMem: os.freemem(),
+};
+console.log(currentOs);
