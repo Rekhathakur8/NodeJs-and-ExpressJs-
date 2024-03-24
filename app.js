@@ -1,16 +1,13 @@
-// Globals variable - are the one which accesible anywhere in program
+// modules in node
+// JavaScript modules allow you to break up your code into separate files.
 
-// as we know there is no window is present in node
+//This makes it easier to maintain the code-base.
 
-// some of global variables are
+//ES Modules rely on the import and export statements.
+const john = "john";
+const peter = "peter";
+const sayHi = (name) => {
+  console.log(`hello my name is ${name}`);
+};
 
-// _dirnmae - path t current directory
-// _filename - function to use modules
-// require - function to use modules
-// process - infor about env where the program is being executed
-
-const my = setInterval(() => {
-  console.log("Hello World");
-}, 1000);
-
-clearInterval(my);
+sayHi(peter);
