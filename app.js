@@ -1,12 +1,16 @@
-/* there are two ways or method know as rapel and cli */
-// i am trying cli here
+// Globals variable - are the one which accesible anywhere in program
 
-const amount = 12;
+// as we know there is no window is present in node
 
-if (amount < 10) {
-  console.log("small number");
-} else {
-  console.log("large number");
-}
+// some of global variables are
 
-console.log("it is my first code");
+// _dirnmae - path t current directory
+// _filename - function to use modules
+// require - function to use modules
+// process - infor about env where the program is being executed
+
+const my = setInterval(() => {
+  console.log("Hello World");
+}, 1000);
+
+clearInterval(my);
