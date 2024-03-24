@@ -8,3 +8,7 @@ sayHi(names.john);
 sayHi(names.peter);
 
 // implementation complited
+
+/* this file is executing without export */
+/* when we import any module it actully invoked */
+require("./about");
