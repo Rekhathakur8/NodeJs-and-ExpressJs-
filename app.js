@@ -1,13 +1,10 @@
-// modules in node
-// JavaScript modules allow you to break up your code into separate files.
+// implimentation of node modules
+// import names.js for name generation
+const names = require("./names");
+// import utills.js so that we can use sayHi func
+const sayHi = require("./utils");
+sayHi("rekha");
+sayHi(names.john);
+sayHi(names.peter);
 
-//This makes it easier to maintain the code-base.
-
-//ES Modules rely on the import and export statements.
-const john = "john";
-const peter = "peter";
-const sayHi = (name) => {
-  console.log(`hello my name is ${name}`);
-};
-
-sayHi(peter);
+// implementation complited
