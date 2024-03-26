@@ -1,29 +1,25 @@
-// Built in modules in node
+// event loop
 
-// 1. fs - file system module
-// 2. path - to work with files and directories paths
-// 3. http - for making requests to the web
-// 4. url - to parse URLs
-// 5. OS  - operating system specific functionality
-// 6. crypto - for generating cryptographic hashes
-// 7. readline - for reading input from a terminal
+// event loop is concept of asysnchronous programing
 
-// import http built in module
+const name = "rekha";
 
-const http = require("http");
-// The http.createServer() method turns your computer into an HTTP server
+console.log(name);
 
-//The http.createServer() method creates an HTTP Server object.
+for (let i = 0; i < 2; i++) {
+  console.log(i);
+}
 
-//The HTTP Server object can listen to ports on your computer and execute a function, a requestListener, each time a request is made.
+console.log("end rekha");
 
-// createServer method takes a callback function
-// callback function has two parameters req and res
-const server = http.createServer((req, res) => {
-  // req:incoming request
-  // res:outgoint response
-  res.write("Welcome to our home page");
-  res.end();
-});
+console.log("start");
 
-server.listen(3000);
+setTimeout(() => {
+  for (let i = 0; i < 3; i++) {
+    console.log(i);
+  }
+}, 1000);
+
+console.log("end");
+
+// The event loop continuously checks the call stack for tasks to execute. When a task is encountered, it's added to the call stack for execution. If there are asynchronous tasks (like the callback passed to setTimeout), the event loop doesn't block the program. Instead, it moves them to the appropriate queue (e.g., the "task queue" or "microtask queue") when they are ready to be executed. When the call stack is empty, the event loop picks tasks from these queues and pushes them onto the call stack for execution.
