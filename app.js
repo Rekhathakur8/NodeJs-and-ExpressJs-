@@ -8,10 +8,8 @@
 // 6. crypto - for generating cryptographic hashes
 // 7. readline - for reading input from a terminal
 
-// importing built in path module
-const path = require("path");
-// seprator property
-console.log(path.sep);
+// importing fs module
+const { readFileSync, writeFileSync } = require("fs");
 
-const absolute = path.resolve(__dirname, "about.js");
-console.log(absolute);
+const read = readFileSync("./about.js", "utf8");
+console.log(read);
