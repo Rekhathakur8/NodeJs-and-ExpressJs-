@@ -8,8 +8,22 @@
 // 6. crypto - for generating cryptographic hashes
 // 7. readline - for reading input from a terminal
 
-// importing fs module
-const { readFileSync, writeFileSync } = require("fs");
+// import http built in module
 
-const read = readFileSync("./about.js", "utf8");
-console.log(read);
+const http = require("http");
+// The http.createServer() method turns your computer into an HTTP server
+
+//The http.createServer() method creates an HTTP Server object.
+
+//The HTTP Server object can listen to ports on your computer and execute a function, a requestListener, each time a request is made.
+
+// createServer method takes a callback function
+// callback function has two parameters req and res
+const server = http.createServer((req, res) => {
+  // req:incoming request
+  // res:outgoint response
+  res.write("Welcome to our home page");
+  res.end();
+});
+
+server.listen(3000);
