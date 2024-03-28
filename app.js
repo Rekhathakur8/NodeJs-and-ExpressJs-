@@ -1,25 +1,28 @@
-// event loop
+// events in node js
+// events is built module in node js
+const EventEmiter = require("events");
 
-// event loop is concept of asysnchronous programing
+// invoke EventEmiter
 
-const name = "rekha";
+const customEmitter = new EventEmiter();
 
-console.log(name);
+// on- listen for an event
+// emit - emit for an event
 
-for (let i = 0; i < 2; i++) {
-  console.log(i);
-}
+customEmitter.on("response", () => {
+  console.log(`data recieved`);
+});
 
-console.log("end rekha");
+customEmitter.on("res", (name, id) => {
+  console.log(`data recieved of ${name} of id ${id}`);
+});
 
-console.log("start");
+customEmitter.on("response", () => {
+  console.log(`hello`);
+});
 
-setTimeout(() => {
-  for (let i = 0; i < 3; i++) {
-    console.log(i);
-  }
-}, 1000);
+// we can create same string  of code as below also, but it will print
+// the order of listen and emit of an event is matter here
 
-console.log("end");
-
-// The event loop continuously checks the call stack for tasks to execute. When a task is encountered, it's added to the call stack for execution. If there are asynchronous tasks (like the callback passed to setTimeout), the event loop doesn't block the program. Instead, it moves them to the appropriate queue (e.g., the "task queue" or "microtask queue") when they are ready to be executed. When the call stack is empty, the event loop picks tasks from these queues and pushes them onto the call stack for execution.
+customEmitter.emit("response");
+customEmitter.emit("res", "rekha", 30);
